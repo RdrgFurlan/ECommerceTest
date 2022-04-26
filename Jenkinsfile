@@ -6,6 +6,7 @@ pipeline {
         stage('Tools Version') {
           steps {
             sh '''java -version
+                  mvn --version
 '''
           }
         }
