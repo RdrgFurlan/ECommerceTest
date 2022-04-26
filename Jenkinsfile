@@ -10,7 +10,7 @@ pipeline {
           }
         }
 
-        stage('Check for POM file') {
+        stage('Check for POM file in repo') {
           steps {
             fileExists 'pom.xml'
           }
