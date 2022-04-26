@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="13" time="239.98">
+    <testcase classname="ECommerce Cart Flow" name="Add product to cart" time="15.13">
+        <system-out>
+            <![CDATA[Given I launch "Chrome" browser.............................................passed
+When I open the Automation Ecommerce WebSite................................passed
+Then I search for a product "Faded Short Sleeve T-shirts"...................passed
+Then I visualize the first product on page..................................passed
+Then I click on Add to cart.................................................passed
+Then I close the cart preview...............................................passed
+And Close browser...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="ECommerce Cart Flow" name="Add product to cart and check price" time="17.235">
+        <system-out>
+            <![CDATA[Given I launch "Chrome" browser.............................................passed
+When I open the Automation Ecommerce WebSite................................passed
+Then I search for a product "Faded Short Sleeve T-shirts"...................passed
+Then I visualize the first product on page..................................passed
+Then I store the product price..............................................passed
+Then I click on Add to cart.................................................passed
+Then I confirm that the product price was not changed.......................passed
+Then I close the cart preview...............................................passed
+And Close browser...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="ECommerce Cart Flow" name="Add product to cart and change quantity" time="16.976">
+        <system-out>
+            <![CDATA[Given I launch "Chrome" browser.............................................passed
+When I open the Automation Ecommerce WebSite................................passed
+Then I search for a product "Faded Short Sleeve T-shirts"...................passed
+Then I visualize the first product on page..................................passed
+Then I click on Add to cart.................................................passed
+Then I close the cart preview...............................................passed
+Then I open the full cart shopping..........................................passed
+Then I will validate the results: 5 5 accepted..............................passed
+And Close browser...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="ECommerce Cart Flow" name="Add product to cart and change quantity 2" time="25.346">
+        <failure message="Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@class='product_img_link']' (tried for 10 second(s) with 500 milliseconds interval)" type="org.openqa.selenium.TimeoutException">
+            <![CDATA[Given I launch "Chrome" browser.............................................passed
+When I open the Automation Ecommerce WebSite................................passed
+Then I search for a product "Faded Short Sleeve T-shirts"...................passed
+Then I visualize the first product on page..................................failed
+Then I click on Add to cart.................................................skipped
+Then I close the cart preview...............................................skipped
+Then I open the full cart shopping..........................................skipped
+Then I will validate the results: 100 100 accepted..........................skipped
+And Close browser...........................................................skipped
+
+StackTrace:
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[@class='product_img_link']' (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at utils.WebElementUtils.checkElementAvailability(WebElementUtils.java:26)
+	at utils.WebElementUtils.clickOnElement(WebElementUtils.java:39)
+	at pages.CartPage.openProductPreview(CartPage.java:62)
+	at stepDefinitions.CartFlowSteps.i_visualize_the_first_product_on_page(CartFlowSteps.java:21)
+	at ✽.I visualize the first product on page(file:///C:/Company/PoCs/BDD-Cucumber/Features/CartFlow.feature:27)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@class='product_img_link']"}
+  (Session info: chrome=100.0.4896.75)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.3', revision: '7b1ebf28ef'
+System info: host: 'RFIT-SOLUTIONS', ip: '192.168.15.91', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4eb167d4c30ed50a44d3d451de9ff6f6, findElement {using=xpath, value=//a[@class='product_img_link']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.75, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\rfits\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:57265}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57265/devtoo..., se:cdpVersion: 100.0.4896.75, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 4eb167d4c30ed50a44d3d451de9ff6f6
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:307)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:40)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:293)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:660)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at utils.WebElementUtils.checkElementAvailability(WebElementUtils.java:26)
+	at utils.WebElementUtils.clickOnElement(WebElementUtils.java:39)
+	at pages.CartPage.openProductPreview(CartPage.java:62)
+	at stepDefinitions.CartFlowSteps.i_visualize_the_first_product_on_page(CartFlowSteps.java:21)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:86)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:57)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:95)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$3(CucumberExecutionContext.java:151)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:151)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.junit.Cucumber$RunBeforeAllHooks.evaluate(Cucumber.java:266)
+	at io.cucumber.junit.Cucumber$RunAfterAllHooks.evaluate(Cucumber.java:281)
+	at io.cucumber.junit.Cucumber$StartTestRun.evaluate(Cucumber.java:233)
+	at io.cucumber.junit.Cucumber$FinishTestRun.evaluate(Cucumber.java:248)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="ECommerce Cart Flow" name="Add product to cart and change quantity 3" time="23.328">
+        <system-out>
+            <![CDATA[Given I launch "Chrome" browser.............................................passed
+When I open the Automation Ecommerce WebSite................................passed
+Then I search for a product "Faded Short Sleeve T-shirts"...................passed
+Then I visualize the first product on page..................................passed
+Then I click on Add to cart.................................................passed
+Then I close the cart preview...............................................passed
+Then I open the full cart shopping..........................................passed
+Then I will validate the results: -10 1 refused.............................passed
+And Close browser...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="ECommerce Cart Flow" name="Add product to cart and change quantity 4" time="39.531">
+        <failure message="Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //input[@name='quantity_1_1_0_0'][@class='cart_quantity_input form-control grey']' (tried for 10 second(s) with 500 milliseconds interval)" type="org.openqa.selenium.TimeoutException">
+            <![CDATA[Given I launch "Chrome" browser.............................................passed
+When I open the Automation Ecommerce WebSite................................passed
+Then I search for a product "Faded Short Sleeve T-shirts"...................passed
+Then I visualize the first product on page..................................passed
+Then I click on Add to cart.................................................passed
+Then I close the cart preview...............................................passed
+Then I open the full cart shopping..........................................passed
+Then I will validate the results: 0 0 removed...............................failed
+And Close browser...........................................................skipped
+
+StackTrace:
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //input[@name='quantity_1_1_0_0'][@class='cart_quantity_input form-control grey']' (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at utils.WebElementUtils.checkElementAvailability(WebElementUtils.java:26)
+	at utils.WebElementUtils.sendKeysToField(WebElementUtils.java:31)
+	at pages.CartPage.changeProductQuantity(CartPage.java:78)
+	at stepDefinitions.CartFlowSteps.i_will_validate_the_results_accepted(CartFlowSteps.java:45)
+	at ✽.I will validate the results: 0 0 removed(file:///C:/Company/PoCs/BDD-Cucumber/Features/CartFlow.feature:31)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@name='quantity_1_1_0_0'][@class='cart_quantity_input form-control grey']"}
+  (Session info: chrome=100.0.4896.75)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.3', revision: '7b1ebf28ef'
+System info: host: 'RFIT-SOLUTIONS', ip: '192.168.15.91', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7f8107b96b5b6b0a7cd8a71cca6a959f, findElement {using=xpath, value=//input[@name='quantity_1_1_0_0'][@class='cart_quantity_input form-control grey']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 100.0.4896.75, chrome: {chromedriverVersion: 99.0.4844.51 (d537ec02474b5..., userDataDir: C:\Users\rfits\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:57495}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57495/devtoo..., se:cdpVersion: 100.0.4896.75, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 7f8107b96b5b6b0a7cd8a71cca6a959f
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at com.sun.proxy.$Proxy21.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:307)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:40)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:293)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:660)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
+	at utils.WebElementUtils.checkElementAvailability(WebElementUtils.java:26)
+	at utils.WebElementUtils.sendKeysToField(WebElementUtils.java:31)
+	at pages.CartPage.changeProductQuantity(CartPage.java:78)
+	at stepDefinitions.CartFlowSteps.i_will_validate_the_results_accepted(CartFlowSteps.java:45)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:86)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:57)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:95)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.lambda$run$0(PickleRunners.java:151)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$3(CucumberExecutionContext.java:151)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:151)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:148)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:196)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:89)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at io.cucumber.junit.Cucumber$RunBeforeAllHooks.evaluate(Cucumber.java:266)
+	at io.cucumber.junit.Cucumber$RunAfterAllHooks.evaluate(Cucumber.java:281)
+	at io.cucumber.junit.Cucumber$StartTestRun.evaluate(Cucumber.java:233)
+	at io.cucumber.junit.Cucumber$FinishTestRun.evaluate(Cucumber.java:248)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:69)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:235)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:54)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="ECommerce Login" name="Login on ECommerce platform" time="15.895">
+        <system-out>
+            <![CDATA[Given I launch "Chrome" browser.............................................passed
+When I open the Automation Ecommerce WebSite................................passed
+Then I click on Login button................................................passed
+Then I input "rdrg.furlan@gmail.com" in email address.......................passed
+Then I input "123123" in password...........................................passed
+Then I click on signin button...............................................passed
+Then I will see the Logout button...........................................passed
+And Close browser...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="ECommerce Login" name="Error when tried to login with invalid credentials" time="13.175">
+        <system-out>
+            <![CDATA[Given I launch "Chrome" browser.............................................passed
+When I open the Automation Ecommerce WebSite................................passed
+Then I click on Login button................................................passed
+Then I input "invalid@invalid.com" in email address.........................passed
+Then I input "123123" in password...........................................passed
+Then I click on signin button...............................................passed
+Then I will see the error message "Authentication failed"...................passed
+And Close browser...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="ECommerce Login" name="Login on ECommerce with DataTables values" time="16.358">
+        <system-out>
+            <![CDATA[Given I launch "Chrome" browser.............................................passed
+When I open the Automation Ecommerce WebSite................................passed
+Then I try to signin with these credentials:................................passed
+Then I will see the Logout button...........................................passed
+And Close browser...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="ECommerce Login" name="Error when tried to login with invalid credentials in DataTables values" time="13.337">
+        <system-out>
+            <![CDATA[Given I launch "Chrome" browser.............................................passed
+When I open the Automation Ecommerce WebSite................................passed
+Then I try to signin with these credentials:................................passed
+Then I will see the error message "Authentication failed"...................passed
+And Close browser...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="ECommerce Login" name="Sign In with parameterized data" time="13.341">
+        <system-out>
+            <![CDATA[Given I launch "Chrome" browser.............................................passed
+When I open the Automation Ecommerce WebSite................................passed
+Then I will validate the credentials: invalid@invalid.com 123123 false......passed
+And Close browser...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="ECommerce Login" name="Sign In with parameterized data 2" time="13.817">
+        <system-out>
+            <![CDATA[Given I launch "Chrome" browser.............................................passed
+When I open the Automation Ecommerce WebSite................................passed
+Then I will validate the credentials: anotherInvalid@invalid.com 123123 false.passed
+And Close browser...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="ECommerce Login" name="Sign In with parameterized data 3" time="15.661">
+        <system-out>
+            <![CDATA[Given I launch "Chrome" browser.............................................passed
+When I open the Automation Ecommerce WebSite................................passed
+Then I will validate the credentials: rdrg.furlan@gmail.com 123123 true.....passed
+And Close browser...........................................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
