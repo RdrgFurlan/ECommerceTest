@@ -21,13 +21,14 @@ pipeline {
 
     stage('Build Solution') {
       steps {
-        echo 'maven compile test package'
+        sh '''mvn clean test
+             '''
       }
     }
 
     stage('Send Message to Teams') {
       steps {
-        echo 'Need to send to Teams'
+        echo 'Sending message to Teams'
       }
     }
 
